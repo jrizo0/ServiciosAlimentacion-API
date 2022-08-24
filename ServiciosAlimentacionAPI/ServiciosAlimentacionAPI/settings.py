@@ -31,12 +31,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'clientes.apps.ClientesConfig',
+    'restaurantes.apps.RestaurantesConfig',
+    'productos.apps.ProductosConfig',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'rest_framework',
+    'corsheaders',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -74,9 +80,16 @@ WSGI_APPLICATION = "ServiciosAlimentacionAPI.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'mssql',
+        'NAME': 'ServiciosAlimentacion',
+        'USER': 'sa',
+        'PASSWORD': 'Password1234!',
+        'HOST': '127.0.0.1',
+        'PORT': '',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
     }
 }
 
