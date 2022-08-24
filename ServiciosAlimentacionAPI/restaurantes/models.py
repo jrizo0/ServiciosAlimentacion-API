@@ -8,7 +8,7 @@ class Tarifav(models.Model):
         managed = False
         db_table = 'TARIFAV'
 
-#todo: pk doble
+#TODO: pk doble
 class Tarifa(models.Model):
     idtarifav = models.OneToOneField('Tarifav', models.DO_NOTHING, db_column='IDTARIFAV', primary_key=True)  # Field name made lowercase.
     codarticulo = models.SmallIntegerField(db_column='CODARTICULO')  # Field name made lowercase.
