@@ -1,4 +1,5 @@
 from django.db import models
+from productos.models import Producto
 
 class Tarifav(models.Model):
     idtarifav = models.SmallIntegerField(db_column='IDTARIFAV', primary_key=True)  # Field name made lowercase.
@@ -8,10 +9,9 @@ class Tarifav(models.Model):
         managed = False
         db_table = 'TARIFAV'
 
-#TODO: pk doble
 class Tarifa(models.Model):
     idtarifav = models.OneToOneField('Tarifav', models.DO_NOTHING, db_column='IDTARIFAV', primary_key=True)  # Field name made lowercase.
-    codarticulo = models.SmallIntegerField(db_column='CODARTICULO')  # Field name made lowercase.
+    codarticulo = models.ForeignKey(Producto, models.DO_NOTHING, db_column='CODARTICULO')  # Field name made lowercase.
     precio = models.FloatField(db_column='PRECIO')  # Field name made lowercase.
 
     class Meta:
