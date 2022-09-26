@@ -50,4 +50,5 @@ class ListTarifaByRestaurante(APIView):
     def get(self, request, idtarifav):
         data = Tarifa.objects.filter(idtarifav=idtarifav)
         serializer = TarifaSerializer(data, many=True)
-        return Response(serializer.data)
+        res_by_id = {tarifa["codarticulo"]: tarifa for tarifa in serializer.data}
+        return Response(res_by_id)
