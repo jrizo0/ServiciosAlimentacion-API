@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-)dlyr(y%xt*ljy^mu2zrptnejh7y5%p2z9+&nnvq4j$(xlez+6"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -82,20 +82,33 @@ WSGI_APPLICATION = "ServiciosAlimentacionAPI.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'mssql',
+#         'NAME': 'ServiciosAlimentacion',
+#         'USER': 'sa',
+#         'PASSWORD': 'SA-Password@1234',
+#         'HOST': '127.0.0.1',
+#         'PORT': '',
+#         'OPTIONS': {
+#             'driver': 'ODBC Driver 17 for SQL Server',
+#         },
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
         'NAME': 'ServiciosAlimentacion',
-        'USER': 'sa',
-        'PASSWORD': 'SA-Password@1234',
-        'HOST': '127.0.0.1',
-        'PORT': '',
+        'USER': 'saadmin',
+        'PASSWORD': 'SA-Password!1234',
+        'HOST': 'serviciosalimentacion.c4bvv72u4h29.us-east-1.rds.amazonaws.com',
+        'PORT': '1433',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
         },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
