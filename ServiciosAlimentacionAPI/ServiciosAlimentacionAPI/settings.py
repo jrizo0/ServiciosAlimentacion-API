@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-)dlyr(y%xt*ljy^mu2zrptnejh7y5%p2z9+&nnvq4j$(xlez+6"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -88,6 +88,7 @@ WSGI_APPLICATION = "ServiciosAlimentacionAPI.wsgi.application"
 #         'NAME': 'ServiciosAlimentacion',
 #         'USER': 'sa',
 #         'PASSWORD': 'Password1234!',
+#         'PASSWORD': 'SA-Password@1234',
 #         'HOST': '127.0.0.1',
 #         'PORT': '',
 #         'OPTIONS': {
