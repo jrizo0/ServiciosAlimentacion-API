@@ -6,6 +6,11 @@ class ClienteSerializer(serializers.ModelSerializer):
         model = Cliente
         fields = '__all__'
 
+class CreateClienteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cliente
+        fields = ["nombrecliente", "direccion1", "e_mail", "tipo"]
+
 class TipoclienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tipocliente

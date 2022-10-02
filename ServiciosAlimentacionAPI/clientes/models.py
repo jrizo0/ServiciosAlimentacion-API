@@ -19,6 +19,13 @@ class Cliente(models.Model):
     e_mail = models.CharField(db_column='E_MAIL', max_length=50, db_collation='Latin1_General_100_CS_AI_SC_UTF8')  # Field name made lowercase.
     tipo = models.ForeignKey('Tipocliente', models.DO_NOTHING, db_column='TIPO')  # Field name made lowercase.
 
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            self.pk = Cliente.objects.all().last().codcliente + 1
+        return super().save(*args, **kwargs)
+
     class Meta:
         managed = False
         db_table = 'CLIENTE'
+
+    
