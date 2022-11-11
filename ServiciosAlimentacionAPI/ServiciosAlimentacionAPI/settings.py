@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'clientes.apps.ClientesConfig',
     'restaurantes.apps.RestaurantesConfig',
     'productos.apps.ProductosConfig',
+    'ventas.apps.VentasConfig',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
